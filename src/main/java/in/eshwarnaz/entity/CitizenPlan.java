@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name = "CITEGEN_PALN_INFO")
+@Table(name = "CITEZEN_PALN_INFO")
 @AllArgsConstructor
 @NoArgsConstructor
 public class CitizenPlan {
@@ -23,8 +23,8 @@ public class CitizenPlan {
 	private Integer CITEGEN_ID;
 	private String CITEGEN_NAME;
 	private String CITEGEN_GENDER;
-	private String CITEGEN_PLAN_NAME;
-	private String CITEGEN_PLAN_STATUS;
+	private String CITEGENPLANNAME;
+	private String CITEGENPLANSTATUS;
 	private LocalDate START_DATE;
 	private LocalDate END_DATE;
 	private Double BENFITAMOUNT;
