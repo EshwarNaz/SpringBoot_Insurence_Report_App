@@ -2,6 +2,8 @@ package in.eshwarnaz.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,22 @@ public class ReportController {
 
 	@Autowired
 	private ReportServices services;
+	@GetMapping("/pdf")
+	public void pdfExport(HttpServletResponse responce) throws Exception {
+
+		responce.setContentType("application/pdf");
+		responce.setHeader("Content-Disposition", "attachment;filename=plans.pdf");
+		services.exportPdf(responce);
+	}
+
+
+	@GetMapping("/excel")
+	public void excelExport(HttpServletResponse responce) throws Exception {
+
+		responce.setContentType("application/octet-stream");
+		responce.setHeader("Content-Disposition", "attachment;filename=plans.xls");
+		services.exportExcel(responce);
+	}
 
 	@PostMapping("/search")
 	public String handleSearch(@ModelAttribute("search") SearchRequest req, Model model) {

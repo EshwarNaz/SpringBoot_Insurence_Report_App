@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap demo</title>
+<title>Citizen Plan Info</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -64,6 +64,7 @@
 					<th>Plan Status</th>
 					<th>Start Date</th>
 					<th>End Date</th>
+					<th>Benfit Amount</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -76,20 +77,21 @@
 						<td>${plan.CITEGENPLANSTATUS}</td>
 						<td>${plan.START_DATE}</td>
 						<td>${plan.END_DATE}</td>
+						<td>${plan.BENFITAMOUNT} </td>
 
 					</tr>
 
 				</c:forEach>
 				<tr>
 					<c:if test="${empty plans}">
-						<td colspan="7" style="text-align: center;">no records
+						<td colspan="8" style="text-align: center;">no records
 							found..</td>
 					</c:if>
 				</tr>
 			</tbody>
 		</table>
 		<hr>
-		Export : <a href="">Excel</a> <a href="">Pdf</a>
+		Export : <a href="excel">Excel</a> <a href="pdf">Pdf</a>
 
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
